@@ -77,6 +77,17 @@ Read `skills/seo/references/eeat-framework.md` for full criteria.
 
 Cada tipo de página tiene un rol SEO diferente. El error más común es aplicar la misma estrategia de contenido y keywords a todos los tipos. Antes de analizar o crear cualquier contenido, identificar el tipo y aplicar las reglas correspondientes.
 
+> **Requisitos técnicos por tipo (schema, contenido visible obligatorio, rich results elegibles, deprecaciones 2024-2026):** ver `seo-content-types`. Este skill cubre estrategia editorial e intención; seo-content-types cubre la capa técnica/schema.
+
+### ⚠️ Deprecaciones críticas 2024-2026
+| Schema / Rich Result | Estado | Qué hacer |
+|---------------------|--------|-----------|
+| HowTo rich results | ❌ Eliminado (2024) | Schema útil para AI search pero sin rich snippet en Google |
+| FAQPage (sitios comerciales) | ❌ Restringido Google (2023) | Solo gov/health en Google. Sí implementar para ChatGPT/Perplexity/Bing |
+| CourseInfo, LearningVideo | ❌ Eliminado (jun 2025) | Usar Course schema estándar |
+| Sitelinks SearchBox | ❌ Eliminado (ene 2026) | Eliminar WebSite schema con SearchAction |
+| Q&A schema (QAPage) | ❌ Eliminado (ene 2026) | No genera rich results en Google |
+
 ---
 
 ### 1. Homepage

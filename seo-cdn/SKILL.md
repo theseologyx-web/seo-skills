@@ -1,11 +1,13 @@
 ---
 name: seo-cdn
 description: >
-  CDN configuration and analysis for SEO. Covers how CDNs affect crawling,
-  indexing, and Core Web Vitals. Cloudflare, Fastly, AWS CloudFront, Akamai
-  configuration for SEO. Cache headers, redirect handling, JS rendering issues,
-  and CDN detection via response headers. Use when user says "CDN", "Cloudflare
-  SEO", "cache headers", "CDN configuration", "edge caching", or "CDN redirects".
+  Utility técnica de CDN: configuración de caché, headers, redirects y rendimiento
+  específico de CDN (Cloudflare, CloudFront, Fastly, Akamai). No es auditoría SEO
+  general — se activa solo cuando el CDN es el factor limitante específico. Para
+  auditoría de servidor en general usar seo-server. Para CWV y LCP usar
+  seo-performance. Se invoca desde seo-performance o seo-server cuando el CDN
+  es la causa del problema. Use cuando diga "Cloudflare SEO", "caché headers",
+  "CDN redirects", "edge caching", "CDN SEO" o "Rocket Loader".
 user-invokable: true
 argument-hint: "[url or CDN provider name]"
 allowed-tools: Read, Grep, Glob, Bash, WebFetch

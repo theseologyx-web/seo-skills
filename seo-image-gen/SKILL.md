@@ -1,6 +1,12 @@
 ---
 name: seo-image-gen
-description: "AI image generation for SEO assets: OG/social preview images, blog hero images, schema images, product photography, infographics. Powered by Gemini via nanobanana-mcp. Requires banana extension installed. Use when user says \"generate image\", \"OG image\", \"social preview\", \"hero image\", \"blog image\", \"product photo\", \"infographic\", \"seo image\", \"create visual\", \"image-gen\", \"favicon\", \"schema image\", \"pinterest pin\", \"generate visual\", \"banner\", or \"thumbnail\"."
+description: >
+  Extension/utility de generación de assets visuales SEO: OG images, hero images,
+  infographics, schema images, product photography. No es análisis SEO estratégico
+  — genera imágenes bajo demanda. Requiere extensión nanobanana-mcp. Para análisis
+  de imágenes existentes usar seo-images. Se invoca desde seo-page o seo-audit
+  cuando hay OG images faltantes o de baja calidad. Use cuando diga "generar
+  imagen", "OG image", "social preview", "hero image", "banner" o "thumbnail".
 argument-hint: "[og|hero|product|infographic|custom|batch] <description>"
 user-invokable: true
 license: MIT

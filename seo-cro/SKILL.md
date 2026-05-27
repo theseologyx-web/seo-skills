@@ -1,11 +1,12 @@
 ---
 name: seo-cro
 description: >
-  UX and Conversion Rate Optimization (CRO) for SEO. Analyzes page layout, user
-  experience signals, A/B testing opportunities, Core Web Vitals impact on conversions,
-  and site architecture for both rankings and revenue. Use when user says "CRO",
-  "conversion optimization", "UX audit", "bounce rate", "user experience",
-  "A/B test", or "landing page optimization".
+  Conversion Rate Optimization a nivel de página: propuesta de valor, jerarquía de CTAs,
+  fricción en formularios de la página, trust signals, presentación de oferta y conversion
+  blockers. Scope: una URL o landing page específica. Para el journey completo post-click
+  (onboarding, multi-step forms, 404s, microcopy) usar seo-cx. Para intent match SERP y
+  pogo-sticking usar seo-sxo. Use cuando el usuario diga "CRO", "conversiones",
+  "landing page optimization", "A/B test", "tasa de conversión", "CTA" o "bounce rate".
 user-invokable: true
 argument-hint: "[url]"
 allowed-tools: Read, Grep, Glob, Bash, WebFetch
@@ -304,43 +305,6 @@ La accesibilidad no es solo compliance — los errores de accesibilidad son tamb
 - [ ] Contraste de todos los CTAs ≥ 4.5:1
 - [ ] Botones y links con texto descriptivo (no "clic aquí")
 - [ ] Skip link al inicio del HTML (`<a href="#main">Ir al contenido</a>`)
-
----
-
-## 11. CX Touchpoint Map
-
-Mapear los puntos de contacto donde el CRO y el CX se intersectan:
-
-### Funnel → Friction Points → Fixes
-
-```
-TOFU: Usuario llega desde búsqueda informacional
-  └─ Friction: Popup de newsletter a los 2s de entrada
-  └─ Fix: Retrasar popup al 60% de scroll o al exit intent
-
-MOFU: Usuario navega a pricing
-  └─ Friction: Precio oculto hasta registro
-  └─ Fix: Mostrar rango de precios sin necesidad de login
-
-BOFU: Usuario en checkout/formulario de contacto
-  └─ Friction: 8 campos requeridos para solicitar demo
-  └─ Fix: Reducir a email + nombre + empresa (3 campos)
-
-POST-CONV: Usuario después de conversión
-  └─ Friction: Sin confirmación ni next steps claros
-  └─ Fix: Thank you page con próximo paso concreto
-```
-
-### Heatmap Reading Guide (Clarity / Hotjar)
-Qué buscar en grabaciones y mapas de calor para identificar friction:
-
-| Señal en heatmap | Qué indica | Acción |
-|-----------------|-----------|--------|
-| Muchos clics en elemento no clickeable | Usuarios asumen que es un link | Convertirlo en link o cambiar estilo |
-| Scroll se detiene en un bloque | Contenido confuso o muy técnico | Simplificar o añadir visual |
-| Alta atención en imágenes decorativas | Distrae de los CTAs | Reducir o eliminar decoración |
-| Rage clicks en CTA | Botón no funciona o carga lento | Revisar JS errors y velocidad |
-| Usuarios que no llegan al CTA principal | CTA muy abajo del fold | Mover CTA o añadir uno above the fold |
 
 ---
 

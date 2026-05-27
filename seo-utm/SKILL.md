@@ -1,12 +1,13 @@
 ---
 name: seo-utm
 description: >
-  UTM parameter strategy, naming conventions, builder, GA4 integration, and campaign tracking.
-  Covers UTMs for link building, email, social, ads, and partnerships. Includes common mistakes
-  (UTMs en links internos), GA4 acquisition reports, and reporting templates.
-  Use when user says "UTM", "parámetros UTM", "tracking de campañas", "utm_source",
-  "utm_medium", "utm_campaign", "Google Analytics tracking", "medir tráfico de links",
-  or "campaign tracking".
+  Utility de tracking UTM: naming conventions, builder, integración GA4 y reporting
+  de campañas. No es análisis SEO estratégico — se usa puntualmente para crear o
+  auditar parámetros UTM. Para reportes con atribución usar seo-reporting. Para
+  privacidad y Consent Mode usar seo-privacy. Se invoca desde seo-link-building
+  o seo-email cuando se necesitan UTMs para tracking. Use cuando diga "UTM",
+  "parámetros UTM", "tracking de campañas", "utm_source", "utm_medium" o
+  "medir tráfico de links".
 user-invokable: true
 argument-hint: "[url] [--source fuente] [--medium medio] [--campaign nombre]"
 allowed-tools: Read, Grep, Glob, Bash, WebFetch

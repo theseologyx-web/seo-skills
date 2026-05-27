@@ -1,13 +1,13 @@
 ---
 name: seo-content-types
 description: >
-  SEO requirements per content type: schema markup, mandatory visible content elements,
-  rich results eligibility, and type-specific on-page checklist. Covers: blog article,
-  news, how-to, recipe, service page, ecommerce product, SaaS/app, local/location page,
-  case study, review, directory, event, job posting, course, video, FAQ, category page.
-  Use when user says "tipo de contenido", "qué schema usar", "requisitos de contenido",
-  "rich results", "receta SEO", "noticia SEO", "how-to SEO", "producto ecommerce SEO",
-  "landing local SEO", "directorio", "job posting", or asks about a specific content type.
+  Referencia técnica de requisitos por tipo de contenido: schema markup, contenido visible
+  obligatorio, rich results elegibles, deprecaciones 2024-2026, y checklist técnico por tipo.
+  Este skill es el complemento técnico de seo-content (que cubre estrategia editorial).
+  Cubre 19 tipos: blog, noticia, how-to, receta, servicio, ecommerce, SaaS, local, caso de
+  estudio, reviews/directorio, evento, job posting, curso, video, categoría, autor, podcast,
+  webinar, herramienta interactiva. Para análisis editorial y E-E-A-T usar seo-content.
+  Para generación y validación de schema usar seo-schema.
 user-invokable: true
 argument-hint: "[tipo de contenido o url]"
 allowed-tools: Read, Grep, Glob, Bash, WebFetch

@@ -1,21 +1,29 @@
 ---
 name: seo-hreflang
 description: >
-  Hreflang technical implementation and validation. Covers self-referencing tags,
-  return tags, x-default, ISO 639-1 language codes, ISO 3166-1 region codes,
-  canonical alignment, and all three implementation methods (HTML link tags,
-  HTTP headers, XML sitemap). Use when user says "hreflang", "i18n tags",
-  "multi-language implementation", "language tags", or "hreflang validation".
-  For full international SEO strategy (URL structure, market prioritization,
-  localization), use seo-international.
-user-invokable: true
+  Referencia técnica de hreflang integrada en seo-international (sección 11).
+  Toda la implementación técnica — validación, métodos HTML/HTTP/XML sitemap,
+  debugging, notas CMS — vive en seo-international para mantener contexto
+  completo de estrategia internacional. Este skill redirige a seo-international.
+  Usar seo-international directamente para cualquier tarea de hreflang.
+user-invokable: false
 argument-hint: "[url]"
 allowed-tools: Read, Grep, Glob, Bash, WebFetch
 ---
 
-# Hreflang: Technical Implementation & Validation
+# Hreflang — Referencia movida a seo-international
 
-Hreflang tells Google which language/region version of a page to serve to which users. It's the technical backbone of international SEO. For the broader international SEO strategy (URL structure, market prioritization, content localization), see `seo-international`.
+> **Este skill ha sido integrado en `seo-international` (sección 11).** Usar `seo-international` para cualquier tarea de hreflang.
+
+Toda la documentación técnica de hreflang vive ahora en `seo-international` sección 11:
+- Validación: self-referencing tags, return tags, x-default, ISO codes, canonical alignment
+- Métodos: HTML link tags, HTTP headers, XML sitemap
+- Tabla de errores comunes con severidad y fix
+- Quick validation commands + tools
+- Debugging step-by-step
+- CMS-specific notes (WordPress, Shopify, Webflow, Next.js, Nuxt)
+
+Para estrategia internacional completa (estructura de URLs, priorización de mercados, localización de contenido), `seo-international` es el skill principal.
 
 > **Critical expectation-setting:** Google treats hreflang as a **hint, not a directive** (reiterated May 2025). Canonical tags, content similarity, site structure, and indexation status can all override hreflang annotations. Hreflang does not guarantee correct locale serving — it improves the probability. Set client expectations accordingly.
 

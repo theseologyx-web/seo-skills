@@ -1,10 +1,13 @@
 ---
 name: cloudflare-crawl
 description: >
-  Descarga el HTML renderizado por Cloudflare de una o varias URLs.
-  Esto representa exactamente lo que Google lee de un sitio web.
-  Usar cuando el usuario quiera descargar páginas, crawlear un sitio,
-  ver cómo ve Google una URL, o recopilar HTML de múltiples páginas.
+  Helper técnico de captura de HTML: descarga el HTML renderizado por Cloudflare
+  de URLs específicas para ver exactamente lo que Google indexa. No es análisis
+  SEO estratégico — es una utility de bajo nivel para obtener HTML post-render.
+  Para crawl completo del sitio usar seo-firecrawl. Se invoca desde seo-schema,
+  seo-page o seo-technical cuando se necesita el HTML exacto de una URL específica.
+  Usar cuando se necesite comparar raw vs. renderizado, o extraer structured data
+  del HTML post-render.
 ---
 
 # Cloudflare Crawler

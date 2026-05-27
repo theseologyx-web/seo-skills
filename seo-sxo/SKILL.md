@@ -1,12 +1,13 @@
 ---
 name: seo-sxo
 description: >
-  Search Experience Optimization (SXO): the bridge between ranking and user satisfaction.
-  Analyzes intent-to-experience match, SERP appearance, engagement quality signals,
-  pogo-sticking prevention, featured snippet opportunities, and the search-to-conversion journey.
-  Use when user says "SXO", "search experience", "intent match", "SERP appearance",
-  "featured snippet", "People Also Ask", "pogo-sticking", "dwell time", "CTR bajo",
-  "bounce desde búsqueda", or "experiencia de búsqueda".
+  Search Experience Optimization: intent match de la query, alineación de expectativas SERP,
+  featured snippets, snippet-to-landing consistency, señales de pogo-sticking, y relevancia
+  de primera impresión desde el SERP hasta la landing. Scope: la capa SERP y el primer clic.
+  Para conversión dentro de la página (CTAs, A/B) usar seo-cro. Para el journey completo
+  post-click (formularios, onboarding, fricción) usar seo-cx. Use cuando diga "SXO",
+  "intent match", "pogo-sticking", "featured snippet", "CTR bajo", "SERP appearance",
+  "título en buscador", "meta description", "People Also Ask" o "bounce desde búsqueda".
 user-invokable: true
 argument-hint: "[url]"
 allowed-tools: Read, Grep, Glob, Bash, WebFetch
@@ -235,13 +236,12 @@ PAA aparece en el 75%+ de las SERPs. Capturarlo da visibilidad adicional.
 ### BOFU — Bottom of Funnel (Transaccional)
 **Qué busca:** Tomar decisión, comprar, contratar
 **Señales de satisfacción:** Conversión, formulario completado, tiempo en pricing page
-**SXO checklist:**
-- [ ] Precio visible sin scroll en desktop
-- [ ] CTA principal above the fold
-- [ ] Friction reducida: sin popups al entrar
-- [ ] Garantías y políticas claras cerca del CTA
-- [ ] Trust signals: reviews, seguridad, logos de clientes
-- [ ] Responde objeciones comunes inline (no en FAQ page separada)
+**SXO checklist (intent match desde SERP):**
+- [ ] La página confirma en los primeros 3s que el usuario llegó al lugar correcto
+- [ ] H1 y above-fold responden la query transaccional inmediatamente
+- [ ] Sin popups al entrar que induzcan pogo-sticking
+- [ ] Tipo de página correcto para intent transaccional (landing o producto, no blog)
+- [ ] → Para optimización de CTAs, layout, A/B testing y conversión de página: usar `seo-cro`
 
 ---
 

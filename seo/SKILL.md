@@ -1,17 +1,12 @@
 ---
 name: seo
 description: >
-  Comprehensive SEO analysis for any website or business type. Performs full site
-  audits, single-page deep analysis, technical SEO checks (crawlability, indexability,
-  Core Web Vitals with INP), schema markup detection/validation/generation, content
-  quality assessment (E-E-A-T framework per Dec 2025 update extending to all
-  competitive queries), image optimization, sitemap analysis, and Generative Engine
-  Optimization (GEO) for AI Overviews, ChatGPT, and Perplexity citations. Analyzes
-  AI crawler accessibility (GPTBot, ClaudeBot, PerplexityBot), llms.txt compliance,
-  brand mention signals, and passage-level citability. Industry detection for SaaS,
-  e-commerce, local business, publishers, agencies. Triggers on: "SEO", "audit",
-  "schema", "Core Web Vitals", "sitemap", "E-E-A-T", "AI Overviews", "GEO",
-  "technical SEO", "content quality", "page speed", "structured data".
+  Router/index y punto de entrada para el sistema SEO. Enruta a los 46 skills
+  especializados según la tarea. Para auditorías completas con scoring y subagentes
+  usar seo-audit. Cubre: quick reference de comandos, detección de industria,
+  quality gates, referencias a archivos de soporte. Triggers: "SEO", "audit",
+  "qué skill uso", "por dónde empiezo", "seo de", o cualquier tarea SEO sin
+  skill específico claro.
 user-invokable: true
 argument-hint: "[command] [url]"
 license: MIT
@@ -97,28 +92,11 @@ Extensions (MCP-dependent): seo-dataforseo, seo-firecrawl, seo-image-gen.
 | `/seo utm [url] [--source X] [--medium Y] [--campaign Z]` | UTM parameter builder, naming conventions, GA4 integration |
 | `/seo image-gen [use-case] <description>` | AI image generation for SEO assets (extension) |
 
-## Orchestration Logic
+## Orchestration
 
-When the user invokes `/seo audit`, delegate to subagents in parallel:
-0. **Google Algorithm Update Check (MANDATORY — before spawning any subagent):**
-   Use WebSearch to check for Google algorithm updates in the last 90 days.
-   Sources (in order): **Google Search Status Dashboard** (`https://status.search.google.com/products/rGHU1u87FJnkP6W2GwMi/history?hl=es`) — fuente oficial primaria; luego Google Search Central Blog, SE Roundtable, Search Engine Land.
-   Capture: update name, rollout dates, what it targets (content, spam, links, helpful content, core, reviews, etc.).
-   Cross-reference update dates with GSC data if available: traffic drops/spikes that align with rollout dates must be flagged.
-   Add a "Google Algorithm Context" block at the top of the Executive Summary — before any findings.
-   Never skip this step. Algorithm context determines whether findings are root causes or symptoms.
-1. Detect business type (SaaS, local, ecommerce, publisher, agency, other)
-2. Spawn subagents: seo-technical, seo-content, seo-schema, seo-sitemap, seo-performance, seo-visual, seo-geo
-3. If Google API credentials detected (`python scripts/google_auth.py --check`), also spawn seo-google agent
-4. If local business detected, also spawn seo-local agent
-5. If local business detected AND DataForSEO MCP available, also spawn seo-maps agent
-6. If Firecrawl MCP available, use `firecrawl_map` to discover all site URLs before analysis
-6. Collect results and generate unified report with SEO Health Score (0-100)
-7. Create prioritized action plan (Critical -> High -> Medium -> Low)
-8. **Offer PDF report**: "Generate a professional PDF report? Use `/seo google report full`"
+`/seo audit <url>` delega a **`seo-audit`** — orquestador único con scoring detallado (SEO Health Score 0-100), subagentes en paralelo, plan de acción priorizado y contexto de algoritmos.
 
-For individual commands, load the relevant sub-skill directly.
-After any analysis command completes, offer to generate a PDF report via `scripts/google_report.py`.
+Para comandos individuales, cargar el sub-skill correspondiente directamente desde la tabla Quick Reference.
 
 ## Industry Detection
 
@@ -158,46 +136,6 @@ Load these on-demand as needed (do NOT load all at startup):
 
 Maps-specific references (loaded by seo-maps skill, not at startup):
 - `references/maps-geo-grid.md`, `references/maps-gbp-checklist.md`, `references/maps-api-endpoints.md`, `references/maps-free-apis.md`
-
-## Scoring Methodology
-
-### SEO Health Score (0-100)
-Weighted aggregate of all categories:
-
-| Category | Weight | Notas |
-|----------|--------|-------|
-| Technical SEO | 22% | Crawlability, indexability, security, redirects |
-| Content Quality | 22% | E-E-A-T, thin content, freshness, passage citability |
-| On-Page SEO | 18% | Titles, metas, H1-H6, URL structure, internal links |
-| AI Search Readiness | 14% | AI crawler access, llms.txt, SAIV potential, schema for AI, citability passages |
-| Schema / Structured Data | 10% | Tipos relevantes, validez, cobertura |
-| Performance (CWV) | 9% | LCP, INP, CLS — field data preferido sobre lab data |
-| Images | 5% | Alt text, formats, lazy loading, compression |
-
-> **Por qué AI Search subió de 10% a 14%:** AI Overviews presentes en >13% de queries en 2026 y creciendo. Sitios invisibles para AI están perdiendo visibilidad estructuralmente. Content Quality bajó 1% y On-Page 2% para acomodar el cambio — refleja el peso real en 2026.
-
-### Priority Levels
-- **Critical**: Blocks indexing or causes penalties (immediate fix required)
-- **High**: Significantly impacts rankings (fix within 1 week)
-- **Medium**: Optimization opportunity (fix within 1 month)
-- **Low**: Nice to have (backlog)
-
-## Agentic Web Readiness
-
-En 2026, AI agents (ChatGPT, Claude, Perplexity, SearchGPT) no solo citan contenido — también compran, reservan y completan transacciones autónomamente. Evaluar como dimensión adicional en `/seo audit`:
-
-| Check | Qué evaluar | Señal positiva |
-|-------|------------|---------------|
-| Machine readability | ¿Puede un AI agent parsear el contenido? | Contenido en texto plano (no solo imágenes), estructura semántica clara |
-| API endpoints expuestos | ¿Hay APIs públicas que agents pueden consumir? | OpenAPI/REST docs, /api/ público, structured data feeds |
-| Agentic commerce readiness | ¿Puede un agent completar una transacción? | Checkout funcional, precios en schema, disponibilidad structured |
-| llms.txt | ¿Declara preferencias para AI consumption? | Archivo presente y bien estructurado |
-| AI crawler access | ¿GPTBot, ClaudeBot, PerplexityBot están permitidos? | robots.txt ALLOW para todos |
-| Schema completeness | ¿Entities, Products, FAQs en JSON-LD? | ≥ 3 tipos de schema relevantes implementados |
-
-**Herramienta de referencia:** WordLift AI Audit (free) evalúa machine readability.
-
-**Cuándo añadir al reporte:** Para clientes SaaS o e-commerce con objetivo de AI visibility. No es crítico para sitios puramente informativos o locales pequeños.
 
 ---
 
@@ -276,33 +214,3 @@ This skill orchestrates 46 specialized sub-skills:
 46. **seo-utm** -- UTM parameter builder, naming conventions, GA4 integration, campaign tracking
 47. **seo-image-gen** -- AI image generation for SEO assets via Gemini (extension)
 
-## Subagents
-
-For parallel analysis during audits:
-- `seo-technical` -- Crawlability, indexability, security, CWV
-- `seo-content` -- E-E-A-T, readability, thin content
-- `seo-schema` -- Detection, validation, generation
-- `seo-sitemap` -- Structure, coverage, quality gates
-- `seo-performance` -- Core Web Vitals measurement
-- `seo-visual` -- Screenshots, mobile testing, above-fold
-- `seo-geo` -- AI crawler access, llms.txt, citability, brand mention signals
-- `seo-local` -- GBP signals, NAP consistency, reviews, local schema, industry-specific local factors (conditional: spawned when Local Service detected)
-- `seo-maps` -- Geo-grid rank tracking, GBP audit, review intelligence, competitor radius mapping (conditional: spawned when Local Service detected AND DataForSEO MCP available)
-- `seo-google` -- CWV field data, URL indexation status, organic traffic trends (conditional: spawned when Google API credentials detected)
-- `seo-dataforseo` -- Live SERP, keyword, backlink, local SEO data (extension, optional)
-- `seo-image-gen` -- SEO image audit and generation plan (extension, optional)
-- `seo-firecrawl` -- Full-site crawl and site mapping (extension, optional; used by audit for URL discovery)
-
-## Error Handling
-
-| Scenario | Action |
-|----------|--------|
-| Unrecognized command | List available commands from the Quick Reference table. Suggest the closest matching command. |
-| URL unreachable | Report the error and suggest the user verify the URL. Do not attempt to guess site content. |
-| Sub-skill fails during audit | Report partial results from successful sub-skills. Clearly note which sub-skill failed and why. Suggest re-running the failed sub-skill individually. |
-| Ambiguous business type detection | Present the top two detected types with supporting signals. Ask the user to confirm before proceeding with industry-specific recommendations. |
-| API rate limit hit (DataForSEO, Google) | Report which API hit the limit. Wait 60s before retry for per-minute limits. For per-day limits (e.g., Indexing API 200/day), stop and report remaining quota. |
-| Crawl timeout on large site | Reduce `limit` parameter. Use `firecrawl_map` first (fast, no content) then targeted crawl on top 50 pages. Report which pages were analyzed and which were skipped. |
-| Site behind authentication | Flag as "authenticated content — cannot crawl automatically". Suggest manual export via GSC Bulk Data Export or Firecrawl browser session with login. Proceed with publicly accessible pages only. |
-| JavaScript SPA — content not rendering | Switch to `firecrawl_scrape` (renders JS) instead of raw fetch. If Firecrawl unavailable, flag as "JS-rendered — analysis based on server-side HTML only; may miss content". |
-| No industry match found | Default to "General" benchmarks. Flag that industry-specific recommendations may not apply. Ask user to specify their business type manually. |

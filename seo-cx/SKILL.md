@@ -1,11 +1,13 @@
 ---
 name: seo-cx
 description: >
-  Customer Experience (CX) audit for SEO: user journey mapping, friction points,
-  trust architecture, micro-copy, form UX, error pages, onboarding, and support accessibility.
-  Use when user says "CX", "customer experience", "experiencia del cliente", "user journey",
-  "micro-copy", "formularios", "página 404", "onboarding", "friction", "confianza",
-  "trust signals", or "journey map".
+  Customer Experience post-click: fricción en el journey completo después de que el usuario
+  llega al sitio. Cubre: navegación, onboarding, formularios multi-step, checkout y lead flow,
+  404/empty states, microcopy, trust continuity a lo largo del journey. Scope: flujo completo
+  del usuario desde la landing hasta la conversión y retención. Para optimización de conversión
+  de una sola página (CTAs, A/B, layout) usar seo-cro. Para intent match SERP pre-clic usar
+  seo-sxo. Use cuando diga "CX", "user journey", "formularios", "fricción", "onboarding",
+  "página 404", "microcopy", "confianza" o "experiencia del cliente".
 user-invokable: true
 argument-hint: "[url o dominio]"
 allowed-tools: Read, Grep, Glob, Bash, WebFetch
