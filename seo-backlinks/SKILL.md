@@ -250,7 +250,6 @@ Calculate a 0-100 score based on:
 ### Critical Issues (fix immediately)
 ### High Priority (fix within 1 month)
 ### Medium Priority (ongoing improvement)
-### Link Building Opportunities (top 10)
 
 ## Error Handling
 

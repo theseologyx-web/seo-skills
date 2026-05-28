@@ -18,6 +18,8 @@ metadata:
 
 # Link Building — Adquisición Proactiva de Backlinks
 
+> **Scope:** Adquisición proactiva de backlinks — outreach, guest posts, digital PR, broken link building, skyscraper. Para análisis del perfil existente (tóxicos, anchor text, referring domains, gap analysis) → usar `seo-backlinks`.
+
 > **Skill relacionado:** `seo-backlinks` cubre el análisis del perfil existente (radiografía actual, tóxicos, anchor text, gap analysis). Este skill (`seo-link-building`) se enfoca en la adquisición proactiva — outreach, guest post, digital PR, broken link building. Úsalos en orden: primero `seo-backlinks` para entender el estado actual, luego `seo-link-building` para planificar la adquisición.
 
 Estrategias y workflows para conseguir backlinks de calidad. El objetivo no es volumen sino autoridad, relevancia topical y naturalidad del perfil.
@@ -549,6 +551,41 @@ curl -o /dev/null -s -w "%{http_code}" [URL_del_articulo]
 **Días 1-30:** [Tácticas quick win: menciones, resource pages]
 **Días 31-60:** [Guest posts en proceso + HARO activo]
 **Días 61-90:** [Skyscraper si aplica + review de resultados]
+
+```link_building_output
+domain: [domain]
+profile_baseline:
+  referring_domains: X
+  domain_rating: X
+goal_90d:
+  new_rds: +X
+  target_dr: X
+tactics:
+  - name: unlinked_mentions
+    opportunities: X
+    links_per_month: X-X
+    priority: first
+  - name: resource_pages
+    opportunities: X
+    links_per_month: X-X
+    priority: medium
+  - name: broken_links
+    opportunities: X
+    links_per_month: X-X
+    priority: medium
+  - name: guest_posts
+    sites_qualified: X
+    links_per_month: X-X
+    priority: low
+  - name: digital_pr
+    angles: X
+    links_per_month: X-X
+    priority: low
+action_plan:
+  days_1_30: [quick wins]
+  days_31_60: [guest posts + HARO]
+  days_61_90: [skyscraper + review]
+```
 
 ---
 
