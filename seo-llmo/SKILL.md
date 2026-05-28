@@ -6,6 +6,8 @@ This skill evaluates and improves how clearly and reliably language models can u
 
 Its focus is on entity clarity, passage quality, summarization readiness, citation readiness, and machine-readable topic framing.
 
+> **Scope:** LLM retrievability — passage-level content structure, citation anchors, chunking for model indexing. Not for generative surface visibility → use `seo-geo`. Not for QA structure and answerability → use `seo-aeo`.
+
 ## Why this skill matters
 
 Language models process content differently from classic search crawlers.
@@ -185,3 +187,17 @@ It should complement both without duplicating their logic.
 ## Maintenance rule
 
 If language model behavior or citation patterns evolve, update this file so the LLMO logic stays current.
+
+```yaml
+# llmo_output (parseable)
+llmo_output:
+  domain: ""
+  retrievability_score: "low|medium|high"
+  passage_quality: "low|medium|high"
+  citation_anchor_gaps: []
+  chunking_issues: []
+  llms_txt_status: "missing|present|needs_update"
+  findings: []
+  priority_actions: []
+  handoff_to_skills: []
+```

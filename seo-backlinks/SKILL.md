@@ -4,9 +4,9 @@ description: >
   Backlink profile analysis: referring domains, anchor text distribution,
   toxic link detection, competitor gap analysis. Requires DataForSEO extension.
   Use when user says "backlinks", "link profile", "referring domains",
-  "anchor text", "toxic links", "link gap", "link building",
+  "anchor text", "toxic links", "link gap",
   "disavow", or "backlink audit".
-  Not for building new links or outreach — use seo-link-building.
+  Not for building new links, outreach, or gap-based target discovery — use seo-link-building.
 user-invokable: true
 argument-hint: "<url>"
 license: MIT
@@ -137,8 +137,10 @@ Use `dataforseo_backlinks_backlinks` with target type "page" to find:
 
 For `/seo backlinks gap <url1> <url2>`:
 
+> **Scope boundary:** This skill analyzes the existing backlink profile only. For finding new link opportunities, target prospecting, or acquisition strategy → use `seo-link-building`.
+
 Use `dataforseo_backlinks_referring_domains` for both domains and compare:
-- Domains linking to competitor but NOT to target = link building opportunities
+- Domains linking to competitor but NOT to target = gap (read it, do not act on it here)
 - Domains linking to both = validate existing relationships
 - Domains linking only to target = competitive advantage
 
@@ -149,8 +151,9 @@ Competitor Gap: example.com vs competitor.com
 Competitor has links from X domains you don't
 You have links from Y domains competitor doesn't
 
-Top 20 Link Building Opportunities:
-  [domain, authority, anchor used for competitor, contact suggestion]
+Gap summary (top 20 by authority):
+  [domain, authority, anchor used for competitor]
+  → For outreach and acquisition planning, hand off to seo-link-building.
 ```
 
 ### 7. New and Lost Backlinks
@@ -216,53 +219,6 @@ In 2026, the off-page signal balance has shifted:
 1. **Monitor unlinked mentions** (Google Alerts, Brand24, Ahrefs Alerts)
 2. **Convert to links** where possible (reach out for attribution)
 3. **Accept unlinked mentions as value** — Google's NLP/entity recognition processes them regardless of a link
-
-## 9. Link Building Strategy & Guest Posting
-
-After the audit, always provide a proactive link acquisition plan:
-
-### Guest Posting
-- Identify relevant blogs/publications in the niche accepting guest contributors
-- Qualify targets: Domain Authority >30, real traffic, editorial standards, topic relevance
-- Outreach process: find editor contact, pitch angle aligned to their audience, include writing samples
-- Anchor text strategy: branded or partial-match anchors only — never exact-match in guest posts
-- Track placements: record URL, DA, anchor used, date published
-
-### Digital PR & Link Bait
-- Original research, data studies, surveys → earns editorial links from journalists
-- Tools: Featured.com (HARO relaunched April 2025), Qwoted, Source of Sources (SOS — free, by HARO founder Peter Shankman), #JournoRequest on X, SourceBottle — respond to journalist queries
-  - ~~Connectively~~ closed December 9, 2024 — remove from any active workflows
-- Infographics, tools, calculators → naturally attract links
-
-### Broken Link Building
-```bash
-# 1. Find competitor's top linked pages (use dataforseo_backlinks_backlinks)
-# 2. Check if those URLs are still live
-curl -o /dev/null -s -w "%{http_code}" [URL]
-# 3. If 404 → offer your content as replacement to linking sites
-```
-
-### Resource Page Link Building
-- Search: `site:example.com "resources"` or `intitle:"useful links" [niche]`
-- Identify resource pages in your niche and pitch your best content as addition
-
-### Reclaiming Lost & Unlinked Mentions
-- Use `dataforseo_backlinks_backlinks` with date filters to find lost links → contact site to restore
-- Search for brand mentions without links → request attribution link
-
-### Outreach Template
-```
-Subject: Resource suggestion for [their page title]
-
-Hi [Name],
-
-I came across your [page] and noticed you link to [competitor resource].
-We published [your content] which covers [specific angle they don't].
-
-Would you consider adding it as an additional resource?
-
-[Your name]
-```
 
 ## Backlink Health Score
 

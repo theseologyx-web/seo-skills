@@ -75,6 +75,10 @@ seo-client-profile:
     rendering-model: "server-side"  # server-side | static | client-side | hybrid | unknown
     known-rendering-issues: false
     multilingual: false
+  technical_stack:
+    cms: ""
+    rendering: "SSR|CSR|SSG|hybrid"
+    data_access: []                 # e.g. ["GSC", "GA4", "DataForSEO"]
   data-access:
     gsc-available: true             # yes | no | unknown
     ga4-available: true             # yes | no | unknown
@@ -85,6 +89,10 @@ seo-client-profile:
     secondary-goals: ["mejorar-visibilidad-local","reducir-dependencia-ads"]
     time-horizon: "6-12-meses"     # <3-meses | 3-6-meses | 6-12-meses | >12-meses | unknown
     ai-search-goals: false          # false | geo | aeo | llmo | readiness-check
+  ai_search_goals:
+    priority: "yes|no|unknown"
+    current_mentions: "none|some|strong"
+    known_blockers: []
   constraints:
     internal-resources: "equipo-pequeño-marketing"
     dev-resources: "agency"        # inhouse | agency | freelancer | low | unknown
@@ -142,6 +150,7 @@ de forma conversacional. Puedes agruparlas, pero no omitas categorías:
    - ¿Hay acceso a GA4 u otra herramienta de analítica?
    - ¿Hay exportaciones de crawl, mapas de redirección, registros de migración u otros
      datos disponibles?
+   - **Stack & data access:** CMS or framework? Server-side or client-side rendering? Access to GSC, GA4, Search Console API, DataForSEO, BWT?
 
 7. **AI Search** *(opcional — preguntar si el usuario lo menciona o si el proyecto lo justifica)*
    - ¿Es importante que el sitio aparezca en respuestas de IA (Google AI Overviews,
@@ -149,6 +158,7 @@ de forma conversacional. Puedes agruparlas, pero no omitas categorías:
    - Si sí: ¿el objetivo es visibilidad generativa (GEO), ser fuente de respuesta directa
      (AEO), mejorar cómo los modelos citan el contenido (LLMO), o primero hacer una
      evaluación general de preparación?
+   - **AI Search goals:** Is visibility in AI Overviews, Perplexity, or ChatGPT a priority? Any existing mentions? Known blockers (paywalls, thin content, no structured data)?
 
 Si alguna respuesta ya está en documentación adjunta o en contexto previo,
 no repreguntes; reutiliza esa información.
@@ -228,6 +238,8 @@ Guías generales:
   - Si es `geo` o el objetivo es aparecer en AI Overviews/respuestas generativas → `seo-geo`
   - Si es `aeo` o el objetivo es ser la fuente de la respuesta directa → `seo-aeo`
   - Si es `llmo` o el objetivo es mejorar citabilidad y clarity para modelos → `seo-llmo`
+
+- Si `ai_search_goals.priority` es `"yes"` → route to `seo-ai-search-readiness` after discovery.
 
 - Si `website-stage` indica migración (`migration-planning`, `migration-in-progress`,
   `post-migration-monitoring`):

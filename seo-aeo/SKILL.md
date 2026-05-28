@@ -6,6 +6,8 @@ This skill evaluates and improves how directly and effectively content answers u
 
 Its focus is answerability: the ability of a page or content cluster to match a question, place the answer clearly, and be extracted reliably by answer-style systems.
 
+> **Scope:** Answerability and direct-response content structure. Not for generative surface visibility → use `seo-geo`. Not for LLM passage chunking or citation anchors → use `seo-llmo`.
+
 ## Why this skill matters
 
 Content that ranks well in classic SEO may still fail in answer engines.
@@ -176,3 +178,17 @@ It should not attempt to solve GEO or LLMO problems — those belong to the dedi
 ## Maintenance rule
 
 If answer engine behavior changes or new extraction patterns emerge, update this file so the AEO logic stays current.
+
+```yaml
+# aeo_output (parseable)
+aeo_output:
+  domain: ""
+  answerability_score: "low|medium|high"
+  qa_pairs_found: 0
+  qa_pairs_missing: []
+  featured_snippet_opportunities: []
+  structured_answer_gaps: []
+  findings: []
+  priority_actions: []
+  handoff_to_skills: []
+```
