@@ -5,6 +5,7 @@ description: >
   Google Business Profile, third-party mentions, review signals, and brand entity
   optimization. Use when user says "brand SERP", "knowledge panel", "branded search",
   "reputation management", "brand mentions", or "entity SEO".
+  Not for entity schema markup or knowledge graph disambiguation — use seo-entity.
 user-invokable: true
 argument-hint: "[brand name or url]"
 allowed-tools: Read, Grep, Glob, Bash, WebFetch

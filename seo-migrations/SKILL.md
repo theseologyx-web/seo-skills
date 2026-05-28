@@ -6,6 +6,7 @@ description: >
   post-migration recovery. Use when user says "site migration", "domain change",
   "URL restructure", "HTTPS migration", "CMS migration", "redirect map",
   "migrating to new platform", "website redesign SEO", or "301 redirects".
+  Not for general IA planning or URL taxonomy design (without URL changes) — use seo-architecture.
 user-invokable: true
 argument-hint: "[current url and/or new url]"
 allowed-tools: Read, Grep, Glob, Bash, WebFetch

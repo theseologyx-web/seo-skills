@@ -6,6 +6,7 @@ description: >
   (render-blocking, JS, CSS, images, fonts, third-party scripts), and fix prioritization.
   Use when user says "performance", "Core Web Vitals", "CWV", "LCP", "INP", "CLS",
   "page speed", "site speed", "lento", "velocidad", or "PageSpeed Insights".
+  Not for crawl errors, redirects, or indexation issues — use seo-technical.
 user-invokable: true
 argument-hint: "[url]"
 allowed-tools: Read, Grep, Glob, Bash, WebFetch

@@ -6,7 +6,7 @@ description: >
   signals, IP reputation, compression (Gzip/Brotli), HTTP/2 vs HTTP/3, SSR vs CSR
   implications, CDN/WAF/proxy detection, and uptime impact on crawl frequency.
   Use when user says "server audit", "hosting SEO", "HTTP headers", "TTFB",
-  "server configuration", "X-Robots-Tag", "server infrastructure", or "hosting analysis".
+  "server configuration", "X-Robots-Tag", "server infrastructure", or "hosting analysis". Not for CDN-specific configuration — use seo-cdn. Not for Core Web Vitals optimization — use seo-performance.
 user-invokable: true
 argument-hint: "[url]"
 allowed-tools: Read, Grep, Glob, Bash, WebFetch

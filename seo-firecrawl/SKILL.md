@@ -5,6 +5,7 @@ description: >
   Use when user says "crawl site", "map site", "full crawl",
   "find all pages", "broken links", "site structure",
   "discover pages", "JS rendering", or needs site-wide analysis.
+  Not for capturing raw HTML of a single specific URL — use seo-crawler.
 user-invokable: true
 argument-hint: "[command] <url>"
 license: MIT

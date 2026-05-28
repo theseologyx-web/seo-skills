@@ -8,6 +8,7 @@ description: >
   off-page, local, SMO, SXO/CX, AI search readiness) y genera un informe con
   hallazgos priorizados y un SEO Health Score. No define lineamientos ni implementa
   cambios: solo radiografía y priorización.
+  Not for SEO strategy or roadmap — use seo-plan. For new clients, run seo-client-discovery first.
 user-invokable: true
 argument-hint: "[url] [--keywords keyword1,keyword2,...] [--keyword-file path/to/keywords.txt] [--lang es|en]"
 license: MIT

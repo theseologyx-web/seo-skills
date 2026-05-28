@@ -6,6 +6,7 @@ description: >
   against sector standards — not specific competitors. Use when user says "benchmark",
   "comparar con la industria", "estoy por encima o debajo de la media", "average industria",
   "qué es normal para mi sector", "cómo estoy vs el mercado", or "industry standards".
+  Not for competitor strategy or keyword gap analysis — use seo-competitive.
 user-invokable: true
 argument-hint: "[url o dominio] [--industry saas|ecommerce|local|finance|health|media|travel|education|realestate|b2b]"
 allowed-tools: Read, Grep, Glob, Bash, WebFetch

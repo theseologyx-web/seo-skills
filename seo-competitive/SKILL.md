@@ -6,6 +6,7 @@ description: >
   competitor content strategy reverse-engineering, and differentiation opportunities.
   Use when user says "competitive analysis", "competitor SEO", "keyword gap",
   "content gap", "SERP market share", "who are my competitors", or "how to beat competitors".
+  Not for analyzing a single competitor page — use seo-competitor-pages. Not for industry benchmark (averages) — use seo-benchmark.
 user-invokable: true
 argument-hint: "[your domain or niche]"
 allowed-tools: Read, Grep, Glob, Bash, WebFetch

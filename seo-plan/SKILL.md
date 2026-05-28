@@ -6,6 +6,7 @@ description: >
   roadmap. Use when user says "SEO plan", "SEO strategy", "SEO planning",
   "content strategy", "keyword strategy", "content calendar",
   "site architecture", or "SEO roadmap".
+  Not for site diagnosis or audit — use seo-audit. For new clients, run seo-client-discovery before planning.
 user-invokable: true
 argument-hint: "[business-type]"
 license: MIT

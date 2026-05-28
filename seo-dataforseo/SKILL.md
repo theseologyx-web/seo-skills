@@ -8,7 +8,7 @@ description: >
   mention tracking), and domain analytics. Requires DataForSEO extension
   installed. Use when user says "dataforseo", "live SERP", "keyword volume",
   "backlink data", "competitor data", "AI visibility check", "LLM mentions",
-  or "real search data".
+  or "real search data". Not for Google-native data (GSC, GA4, PageSpeed) — use seo-google.
 user-invokable: true
 argument-hint: "[command] [query]"
 license: MIT

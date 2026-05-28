@@ -8,6 +8,9 @@ description: >
   platform-specific optimization. Use when user says "AI Overviews", "SGE",
   "GEO", "AI search", "LLM optimization", "Perplexity", "AI citations",
   "ChatGPT search", or "AI visibility".
+  Not for structuring QA pairs or passage-level content — use seo-aeo. Not for LLM passage
+  chunking and citation anchors — use seo-llmo. For holistic AI Search assessment — start with
+  seo-ai-search-readiness.
 user-invokable: true
 argument-hint: "[url]"
 license: MIT

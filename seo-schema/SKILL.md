@@ -4,6 +4,7 @@ description: >
   Detect, validate, and generate Schema.org structured data. JSON-LD format
   preferred. Use when user says "schema", "structured data", "rich results",
   "JSON-LD", or "markup".
+  Not for deciding which content types need schema (strategy) — use seo-content-types.
 user-invokable: true
 argument-hint: "[url]"
 license: MIT

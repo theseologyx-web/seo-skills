@@ -1,6 +1,6 @@
 ---
 name: robots-txt
-description: "Validate, generate, and audit robots.txt files for SEO. Use this skill whenever the user mentions robots.txt, crawler directives, bot blocking, crawl control, AI crawler management, or asks about controlling how search engines or AI bots crawl their website. Also trigger when the user wants to check if their robots.txt has errors, wants to generate a new robots.txt from scratch, needs to audit an existing robots.txt for SEO issues, wants to block or allow specific bots (like GPTBot, CCBot, ClaudeBot, Googlebot, Bingbot), or asks about crawl budget optimization. Trigger even if the user just pastes a robots.txt and asks 'is this ok?' or 'review this'. Works for any CMS or static site."
+description: "Validate, generate, and audit robots.txt files for SEO. Use this skill whenever the user mentions robots.txt, crawler directives, bot blocking, crawl control, AI crawler management, or asks about controlling how search engines or AI bots crawl their website. Also trigger when the user wants to check if their robots.txt has errors, wants to generate a new robots.txt from scratch, needs to audit an existing robots.txt for SEO issues, wants to block or allow specific bots (like GPTBot, CCBot, ClaudeBot, Googlebot, Bingbot), or asks about crawl budget optimization. Trigger even if the user just pastes a robots.txt and asks 'is this ok?' or 'review this'. Works for any CMS or static site. Not for sitemap generation or validation — use seo-sitemap."
 ---
 
 # robots.txt Skill — Validate, Generate & Audit

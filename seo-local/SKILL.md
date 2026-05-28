@@ -9,7 +9,7 @@ description: >
   real estate, automotive). Use when user says "local SEO", "Google
   Business Profile", "GBP", "map pack", "local pack", "citations",
   "NAP consistency", "local rankings", "service area", "multi-location",
-  or "local search".
+  or "local search". Not for geo-grid Maps ranking tracking — use seo-maps.
 user-invokable: true
 argument-hint: "[url]"
 license: MIT

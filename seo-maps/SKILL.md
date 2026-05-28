@@ -9,7 +9,7 @@ description: >
   intelligence), DataForSEO + Google (maximum coverage). Use when user
   says "maps", "geo-grid", "rank tracking", "GBP audit", "review
   velocity", "competitor radius", "maps analysis", "local rank
-  tracking", "Share of Local Voice", or "SoLV".
+  tracking", "Share of Local Voice", or "SoLV". Not for general local SEO strategy (GBP optimization, citations, NAP) — use seo-local.
 user-invokable: true
 argument-hint: "[command] [url|keyword|location]"
 license: MIT

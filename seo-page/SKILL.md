@@ -5,6 +5,7 @@ description: >
   technical meta tags, schema, images, and performance. Use when user says
   "analyze this page", "check page SEO", "single URL", "check this page",
   "page analysis", or provides a single URL for review.
+  Not for full site audit — use seo-audit.
 user-invokable: true
 argument-hint: "[url]"
 license: MIT

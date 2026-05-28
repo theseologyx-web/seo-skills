@@ -5,6 +5,7 @@ description: >
   URL structure, mobile, Core Web Vitals, structured data, JavaScript rendering,
   and IndexNow protocol. Use when user says "technical SEO", "crawl issues",
   "robots.txt", "Core Web Vitals", "site speed", or "security headers".
+  Not for Core Web Vitals deep optimization — use seo-performance. Not for CDN-specific issues — use seo-cdn.
 user-invokable: true
 argument-hint: "[url]"
 license: MIT

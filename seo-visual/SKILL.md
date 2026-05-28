@@ -5,6 +5,7 @@ description: >
   analyzes above-fold content, detects rendering issues, and compares visual vs crawled content.
   Use when user says "screenshot", "captura de pantalla", "mobile rendering", "renderizado",
   "above the fold", "primera impresión visual", "cómo se ve", or "visual check".
+  Not for UX analysis or conversion — use seo-ux-visual or seo-cro.
 user-invokable: true
 argument-hint: "[url]"
 allowed-tools: Read, Grep, Glob, Bash, WebFetch

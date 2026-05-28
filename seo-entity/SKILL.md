@@ -7,6 +7,7 @@ description: >
   visibility. Use when user says "entity SEO", "Knowledge Graph", "entity authority",
   "semantic SEO", "entity recognition", "brand entity", "topical authority",
   or "entity disambiguation".
+  Not for brand SERP monitoring or reputation management — use seo-brand.
 user-invokable: true
 argument-hint: "[brand name, person name, or website url]"
 allowed-tools: Read, Grep, Glob, Bash, WebFetch

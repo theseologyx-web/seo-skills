@@ -3,7 +3,7 @@ name: seo-sitemap
 description: >
   Analyze existing XML sitemaps or generate new ones with industry templates.
   Validates format, URLs, and structure. Use when user says "sitemap",
-  "generate sitemap", "sitemap issues", or "XML sitemap".
+  "generate sitemap", "sitemap issues", or "XML sitemap". Not for crawl directives or robots.txt rules — use seo-robots.
 user-invokable: true
 argument-hint: "[url or generate]"
 license: MIT

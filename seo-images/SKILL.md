@@ -5,6 +5,7 @@ description: >
   sizes, formats, responsive images, lazy loading, and CLS prevention. Use when
   user says "image optimization", "alt text", "image SEO", "image size",
   "optimize images", "image performance", or "image audit".
+  Not for generating new images — use seo-image-gen.
 user-invokable: true
 argument-hint: "[url]"
 license: MIT

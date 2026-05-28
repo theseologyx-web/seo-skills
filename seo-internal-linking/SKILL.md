@@ -8,6 +8,7 @@ description: >
   better?" or "which pages need more internal links?" or shares a sitemap and
   wants linking advice. This skill diagnoses linking issues and recommends
   specific link additions—it does not modify the site unless explicitly asked.
+  Not for external link analysis or acquisition — use seo-backlinks or seo-link-building.
 user-invokable: true
 argument-hint: "[url or sitemap]"
 allowed-tools: Read, Grep, Glob, Bash, WebFetch

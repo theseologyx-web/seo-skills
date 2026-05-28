@@ -11,6 +11,7 @@ description: >
   and cluster", "information architecture audit", "architecture review",
   "rediseño arquitectura", "cambios de estructura sin aprobación", or any
   request to design or validate how a website organizes its content and URLs.
+  Not for live site migrations or redirect mapping — use seo-migrations.
 user-invokable: true
 argument-hint: "create [keyword-file or topic] | audit [old-sitemap] [new-sitemap]"
 allowed-tools: Read, Grep, Glob, Bash, WebFetch, Write

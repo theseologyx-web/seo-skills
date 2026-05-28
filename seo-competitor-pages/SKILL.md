@@ -6,6 +6,7 @@ description: >
   and conversion optimization. Use when user says "comparison page", "vs page",
   "alternatives page", "competitor comparison", "X vs Y", "versus",
   "compare competitors", or "alternative to".
+  Not for broad competitive landscape or strategy — use seo-competitive.
 user-invokable: true
 argument-hint: "[url or generate] [competitor]"
 license: MIT

@@ -6,6 +6,7 @@ description: >
   Use when user says "backlinks", "link profile", "referring domains",
   "anchor text", "toxic links", "link gap", "link building",
   "disavow", or "backlink audit".
+  Not for building new links or outreach — use seo-link-building.
 user-invokable: true
 argument-hint: "<url>"
 license: MIT

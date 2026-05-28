@@ -5,7 +5,7 @@ description: >
   visualization, client reporting, executive dashboards, traffic attribution,
   ROI calculation, and automated reporting workflows. Use when user says "SEO
   report", "SEO dashboard", "report for client", "SEO ROI", "KPIs", "SEO metrics",
-  "monthly report", "executive report", or "how to measure SEO success".
+  "monthly report", "executive report", or "how to measure SEO success". Not for raw data pulls — use seo-dataforseo or seo-google.
 user-invokable: true
 argument-hint: "[domain, client name, or reporting period]"
 allowed-tools: Read, Grep, Glob, Bash, WebFetch

@@ -6,6 +6,7 @@ description: >
   resource page outreach, outreach email sequences, link velocity, and campaign tracking.
   Use when user says "link building", "conseguir backlinks", "guest post", "outreach",
   "HARO", "digital PR", "broken link", "niche edit", "conseguir enlaces", or "link acquisition".
+  Not for analyzing existing backlink profile or toxic links — use seo-backlinks.
 user-invokable: true
 argument-hint: "[dominio o nicho] [--tactic guest-post|digital-pr|broken-link|skyscraper|niche-edit|resource-page]"
 allowed-tools: Read, Grep, Glob, Bash, WebFetch

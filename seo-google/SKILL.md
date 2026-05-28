@@ -8,7 +8,7 @@ description: >
   user says "search console", "GSC", "PageSpeed", "CrUX", "field data",
   "indexing API", "GA4 organic", "URL inspection", "google api setup",
   "real CWV data", "impressions", "clicks", "CTR", "position data",
-  "LCP", "INP", "CLS", "FCP", "TTFB", or "Lighthouse scores".
+  "LCP", "INP", "CLS", "FCP", "TTFB", or "Lighthouse scores". Not for third-party SERP data, keyword metrics, or backlink data — use seo-dataforseo.
 user-invokable: true
 argument-hint: "[command] [url|property]"
 license: MIT

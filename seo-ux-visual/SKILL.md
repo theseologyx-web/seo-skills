@@ -5,6 +5,7 @@ description: >
   above-fold experience, brand consistency, CTA visual effectiveness, and accessibility.
   Use when user says "visual audit", "diseño visual", "tipografía", "colores", "accesibilidad",
   "WCAG", "above the fold", "contraste", "UX visual", "first impression" or "brand consistency".
+  Not for page-level conversion optimization — use seo-cro.
 user-invokable: true
 argument-hint: "[url]"
 allowed-tools: Read, Grep, Glob, Bash, WebFetch
