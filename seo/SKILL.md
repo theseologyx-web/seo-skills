@@ -20,6 +20,8 @@ metadata:
 # SEO: Universal SEO Analysis Skill
 
 > **Rol de este skill:** Router/index y punto de entrada rápido. Para auditorías completas con scoring detallado y subagentes, usar `seo-audit` (10 categorías, lógica de orquestación completa). Este skill hace checks rápidos y enruta a los skills especializados según la necesidad.
+>
+> **Routing reference:** Para reglas de routing completas (cuándo usar cada skill, cuándo NO usarlo y a dónde enrutar), leer primero `shared/SYSTEM-ROUTING.md`.
 
 **Invocation:** `/seo $1 $2` where `$1` is the command and `$2` is the URL or argument.
 

@@ -7,6 +7,7 @@ Skills modulares de SEO para Claude Code. Diseñados en colaboración con Perple
 ```
 seo-*/          Skills individuales (55 skills)
 shared/         Infraestructura compartida
+  SYSTEM-ROUTING.md   ← leer primero: routing de 1 línea por skill + tabla de pares conflictivos
   taxonomy.md
   data-contracts.md
   recommendation-style.md
