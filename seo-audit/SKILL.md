@@ -8,7 +8,6 @@ description: >
   off-page, local, SMO, SXO/CX, AI search readiness) y genera un informe con
   hallazgos priorizados y un SEO Health Score. No define lineamientos ni implementa
   cambios: solo radiografía y priorización.
-  Not for SEO strategy or roadmap — use seo-plan. For new clients, run seo-client-discovery first.
 user-invokable: true
 argument-hint: "[url] [--keywords keyword1,keyword2,...] [--keyword-file path/to/keywords.txt] [--lang es|en]"
 license: MIT
@@ -73,6 +72,20 @@ Si no existe, detecta de forma mínima:
 
 > Una caída del 30 % causada por un Core Update requiere un plan distinto que una
 > causada por un error de redirecciones.
+
+### 0.3. Execution-state requirement
+
+Every audit must declare whether the run is:
+- `complete`
+- `partial`
+- `cached`
+- `provisional`
+
+The audit must specify:
+- active live sources,
+- missing live sources,
+- findings validated with live data,
+- findings inferred from historical or partial evidence.
 
 ---
 
@@ -340,3 +353,167 @@ Verifica que:
 - No promete resultados ni fechas; solo evalúa el estado actual y prioriza siguientes pasos.
 
 Recuerda: **seo-audit = radiografía y triage; otros skills = tratamiento y lineamientos.**
+
+---
+
+## 10. Contexto de auditoría y orquestación
+
+Este skill soporta tres contextos:
+
+- `audit_context: normal | migration | recovery`
+
+Cuando `audit_context = migration` o se detecta un cambio mayor de URLs/dominio, este skill debe:
+
+- Invocar `seo-migrations` para:
+  - mapear URLs viejas → nuevas,
+  - validar legacy redirects,
+  - detectar assets perdidos o mal dirigidos.
+- Invocar `seo-technical` sobre el nuevo sitio para:
+  - validar crawlability, indexación, rendering, canonicals, paginación, breadcrumbs, faceted navigation y discoverability.
+- Invocar `seo-content` + `seo-internal-linking` para:
+  - evaluar impacto en cobertura de contenido, hubs, autoridad temática y flujo de equity.
+- Invocar `seo-reporting` para:
+  - comparar hallazgos actuales con auditorías y reportes previos.
+- Considerar `seo-brand` (y cualquier skill de brand del proyecto) como constraint duro para:
+  - naming, messaging, arquitectura de información que afecte percepción de marca.
+
+---
+
+## 11. Paso previo obligatorio — Recent Search Context Check
+
+Antes de diagnosticar rendimiento SEO, caídas de ranking, volatilidad de indexación, pérdida de CTR, pérdida de rich results o anomalías de rastreo, validar el contexto actual de Google Search.
+
+Checks requeridos:
+1. Google Search Status Dashboard:
+   - core updates activos o recién completados
+   - spam updates
+   - ranking incidents
+   - indexing incidents
+   - crawling incidents
+2. Google Search Central Blog / documentación oficial:
+   - crawling e indexación
+   - structured data / rich results
+   - spam policies
+   - JavaScript rendering
+   - cambios en Search Console reporting
+   - Core Web Vitals / page experience updates
+3. Para cualquier tema de rich results, confirmar nivel de soporte actual:
+   - soportado | restringido | deprecado | eliminado
+
+Reglas de interpretación:
+- No atribuir cambios de ranking solo a problemas del sitio sin considerar contexto de sistemas de búsqueda.
+- Si hay un update activo o recién completado, anotar conclusiones con incertidumbre donde corresponda.
+- Separar:
+  - defectos confirmados del sitio,
+  - probable volatilidad de update,
+  - probable desplazamiento competitivo,
+  - probable demanda/estacionalidad,
+  - probable cambio de medición/reporting.
+
+### Checks técnicos de arquitectura requeridos en toda auditoría completa
+
+Incluso si no hay problemas, toda auditoría completa debe confirmar explícitamente:
+
+#### Crawl e indexación
+- Indexabilidad por template y tipos de página clave.
+- Directivas robots, meta robots, x-robots-tag.
+- Cobertura y frescura del XML sitemap.
+- Códigos HTTP por templates importantes.
+- Integridad de canonicals entre templates.
+- Orphan pages y profundidad de crawl.
+- Rutas de internal linking a páginas estratégicas.
+
+#### Paginación y sistemas de listados
+- Existencia y limpieza de patrones de URL paginados.
+- Crawlability de series paginadas (page 2+).
+- Comportamiento de canonical en páginas paginadas.
+- Descubribilidad de páginas más profundas vía HTML links.
+- Interacción entre paginación, infinite scroll y URLs facetadas.
+- Riesgo de index bloat por combinaciones de filtros/parámetros.
+
+#### Breadcrumbs y jerarquía
+- Presencia de navegación breadcrumb en templates jerárquicos.
+- Alineación entre breadcrumbs, estructura de URL y jerarquía de navegación.
+- Crawlability de links de breadcrumb.
+- Validez de structured data de breadcrumbs donde esté implementado.
+- Detección de jerarquías contradictorias.
+
+#### Faceted navigation
+- Identificación de facetas indexables vs no indexables.
+- Crawl traps causadas por filtros de alta dimensionalidad.
+- Duplicación introducida por parámetros.
+- Gobierno de canonical / noindex / robots.
+- Filtración de internal links hacia espacios de parámetros de bajo valor.
+
+#### Integridad internacional / multi-mercado
+- Consistencia de hreflang (donde aplique).
+- Consistencia de canonical entre mercados.
+- Lógica de locale targeting.
+- Uso de x-default donde corresponda.
+- Indexabilidad por mercado/idioma.
+
+### Adiciones al output de auditoría
+
+```yaml
+recent_search_context:
+  checked_sources:
+    - Google Search Status Dashboard
+    - Google Search Central Blog
+  active_updates_or_incidents: []
+  relevant_recent_documentation_changes: []
+  interpretation_risk: low | medium | high
+  confidence_level: low | medium | high
+
+technical_architecture_findings:
+  breadcrumbs:
+    status: pass | warning | fail
+    findings: []
+  pagination:
+    status: pass | warning | fail
+    findings: []
+  faceted_navigation:
+    status: pass | warning | fail
+    findings: []
+  canonicals:
+    status: pass | warning | fail
+    findings: []
+  crawl_depth_and_discoverability:
+    status: pass | warning | fail
+    findings: []
+
+migration_findings:
+  mapping_summary: []
+  redirect_continuity_summary: []
+  lost_or_risked_assets_summary: []
+```
+
+---
+
+## 12. Agentic Browsing Layer en auditorías completas
+
+Cuando el sitio tiene objetivos de AI Search, contenido machine-consumable, o flujos interactivos complejos, esta auditoría debe incluir un pass de machine interaction readiness.
+
+Esta capa no reemplaza el SEO técnico, UX ni AI Search. Los complementa.
+
+La auditoría debe evaluar:
+- si los agentes pueden entender la página a través del accessibility tree,
+- si los elementos interactivos tienen nombres programáticos estables,
+- si la inestabilidad visual podría romper la interacción de máquinas,
+- si existen superficies machine-readable como `llms.txt` o WebMCP donde sean relevantes.
+
+Reglas de interpretación:
+- Los hallazgos de Agentic Browsing no deben presentarse como score de ranking directo.
+- Usarlos como señales diagnósticas de fiabilidad de interacción y compatibilidad futura con AI/browser-agents.
+
+```yaml
+agentic_browsing_context:
+  included: yes | no
+  checked_signals: []
+  machine_interaction_risk: low | medium | high
+  top_findings: []
+  dependencies:
+    - seo-technical
+    - seo-ux-visual
+    - seo-performance
+    - seo-ai-search-readiness
+```

@@ -32,6 +32,7 @@ Use this skill when:
 - a roadmap is needed for the next phase
 - the user wants a post-launch strategy
 - the user wants to expand into new topic territory
+- the user wants AI-search growth, not only classic SEO growth
 
 ## Required input
 
@@ -71,7 +72,7 @@ This skill must:
 - identify content distribution needs
 - identify conversion improvement opportunities
 - define ongoing monitoring loops
-- incorporate GEO opportunities when relevant
+- incorporate GEO, AEO, and LLMO opportunities when relevant
 
 ## Growth pillars
 
@@ -131,6 +132,8 @@ Find content that has:
 - outdated information
 - weak linking
 - poor snippet performance
+- low answerability
+- low citation readiness
 
 ### Step 3: Identify new opportunity areas
 Find topics or subtopics not yet covered but strategically valuable.

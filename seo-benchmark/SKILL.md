@@ -6,7 +6,6 @@ description: >
   against sector standards — not specific competitors. Use when user says "benchmark",
   "comparar con la industria", "estoy por encima o debajo de la media", "average industria",
   "qué es normal para mi sector", "cómo estoy vs el mercado", or "industry standards".
-  Not for competitor strategy or keyword gap analysis — use seo-competitive.
 user-invokable: true
 argument-hint: "[url o dominio] [--industry saas|ecommerce|local|finance|health|media|travel|education|realestate|b2b]"
 allowed-tools: Read, Grep, Glob, Bash, WebFetch
@@ -21,6 +20,27 @@ metadata:
 Compara las métricas SEO de un sitio contra los promedios de su sector. Diferente de `seo-competitive` (que compara contra competidores específicos): aquí la referencia son los estándares de la industria, útiles para contexto en reportes de cliente y para priorizar esfuerzos.
 
 > **Fuentes de datos:** Google CrUX Tech Report 2024, Backlinko CTR Study 2022 (n=4M keywords), Advanced Web Ranking CTR data 2024, Ahrefs Industry Reports 2024, Search Engine Journal Benchmarks 2025.
+
+---
+
+## Scope boundary — benchmark vs competitor audit
+
+This skill compares the site against industry norms, vertical averages, and market-level expectations.
+
+It does NOT replace a competitor-by-competitor SEO audit.
+
+If the task requires:
+- auditing named competitors one by one,
+- comparing architecture or content patterns across real rivals,
+- identifying specific competitive weaknesses and attack vectors,
+
+route to:
+- `seo-competitive`
+- and, when deeper one-by-one analysis is needed, `seo-competitor-audit`
+
+Recommended combined usage:
+- use `seo-benchmark` to understand whether the site is below, near, or above market norms,
+- use `seo-competitive` and `seo-competitor-audit` to understand why specific rivals outperform the site.
 
 ---
 

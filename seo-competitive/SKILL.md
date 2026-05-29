@@ -6,7 +6,6 @@ description: >
   competitor content strategy reverse-engineering, and differentiation opportunities.
   Use when user says "competitive analysis", "competitor SEO", "keyword gap",
   "content gap", "SERP market share", "who are my competitors", or "how to beat competitors".
-  Not for analyzing a single competitor page — use seo-competitor-pages. Not for industry benchmark (averages) — use seo-benchmark.
 user-invokable: true
 argument-hint: "[your domain or niche]"
 allowed-tools: Read, Grep, Glob, Bash, WebFetch
@@ -15,6 +14,72 @@ allowed-tools: Read, Grep, Glob, Bash, WebFetch
 # SEO Competitive Analysis & Market Intelligence
 
 Systematically analyze your SEO competitive landscape to identify gaps, opportunities, and differentiation strategies.
+
+---
+
+## Advanced competitor audit framework
+
+This skill must not stop at high-level competitive comparison. When the brief involves strategic SEO competition, it must perform an advanced competitor-by-competitor audit, not only a market summary.
+
+Required interpretation rule:
+- `seo-competitive` owns comparative competitive analysis across multiple rivals.
+- It must evaluate each meaningful competitor individually before synthesizing cross-competitor patterns.
+- If the task requires deep execution planning for backlinks, route to `seo-link-building`.
+- If the task requires full technical validation of one competitor domain, route to `seo-technical` or `seo-page` as supporting skills.
+- If the task requires a deep one-by-one audit of named competitors, route to `seo-competitor-audit`.
+
+### Required competitor audit dimensions
+
+For each meaningful competitor, assess at minimum:
+1. Market positioning in search.
+2. Keyword universe and topic cluster coverage.
+3. Intent match by funnel stage.
+4. Information architecture and URL taxonomy.
+5. Page type coverage (homepage, category, service, product, comparison, blog, guides, tools, location pages).
+6. On-page optimization quality.
+7. Internal linking and hub/silo logic.
+8. Structured data and search appearance.
+9. Technical quality signals visible in crawl/rendered outputs.
+10. Performance and layout stability where evidence is available.
+11. Backlink profile quality and authority posture.
+12. Brand/entity footprint in SERPs.
+13. AI Search readiness, citation potential, and answerability signals.
+14. Agentic Browsing / machine interaction readiness when relevant.
+
+### Required per-competitor output
+
+For every core competitor, include a structured block like this:
+
+```yaml
+competitor_audit:
+  competitor: ""
+  competitor_type: direct | indirect | serp_competitor | marketplace | publisher
+  market_position_summary: ""
+  strengths: []
+  weaknesses: []
+  keyword_coverage_notes: []
+  architecture_notes: []
+  content_notes: []
+  schema_notes: []
+  internal_linking_notes: []
+  technical_notes: []
+  performance_notes: []
+  backlink_notes: []
+  brand_entity_notes: []
+  ai_search_notes: []
+  agentic_browsing_notes: []
+  opportunities_against_this_competitor: []
+  threat_level: low | medium | high
+```
+
+### Required synthesis layer
+
+After auditing competitors individually, synthesize:
+- recurring strengths across the market,
+- recurring weaknesses across the market,
+- whitespace opportunities,
+- defensible differentiators,
+- priorities for content, architecture, internal linking, authority, and AI Search.
 
 ---
 

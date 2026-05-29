@@ -29,6 +29,7 @@ Use this skill when:
 - content performance is weak and the writing may be part of the problem
 - the user wants a strategy for publishing AI-assisted content safely
 - a page, cluster, or content program needs humanization and quality control
+- the site wants better answerability, summarization, or citation readiness
 
 ## Required input
 
@@ -42,6 +43,10 @@ It may also use:
 - raw page copy
 - editorial guidelines
 - business or product context
+- `ai_search_readiness_findings`
+- `geo_opportunities`
+- `aeo_opportunities`
+- `llmo_opportunities`
 
 ## Required output
 
@@ -142,6 +147,10 @@ Flag content when it shows patterns like:
 - keyword stuffing disguised as helpful writing
 - awkward or unnatural transitions
 - content that reads fine but does not actually answer anything deeply
+- content too vague to summarize well
+- weak entity framing
+- low passage-level clarity
+- unsupported statements that reduce citation confidence
 
 ## Evaluation logic
 
@@ -161,6 +170,9 @@ The key is whether it feels purposeful and specific rather than generic.
 
 ### Rule 5: Technical quality does not guarantee content quality
 A page can be technically perfect and still fail editorially.
+
+### Rule 6: AI-search clarity is now part of editorial quality
+Content that is too vague to summarize, too messy to extract, or too weakly framed to interpret has a real editorial quality problem — not only an AI-search problem.
 
 ## Quality statuses
 
